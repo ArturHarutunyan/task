@@ -3,7 +3,6 @@ import {Provider} from "react-redux";
 import store from "../store";
 import React from "react";
 import Router from 'next/router'
-import { PersistGate } from 'redux-persist/integration/react';
 
 import LoginModdlware from './../components/loginModdlware'
 class MyApp extends App {
