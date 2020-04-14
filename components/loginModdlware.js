@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Router, {useRouter} from 'next/router'
 import Loader from './loader';
 
-const  LoginModdlware = ({Component,pageProps,token}) => {
+const  LoginModdlware = ({Component,pageProps,token,loading}) => {
 	const router = useRouter()
 	useEffect(()=>{
 		if (token === ""){
@@ -16,7 +16,7 @@ const  LoginModdlware = ({Component,pageProps,token}) => {
 			}
 		}
 	})
-	if(!((token === "" && router.pathname!=="/login") || (token !== "" && router.pathname==="/login"))) {
+	if(!((token === "" && router.pathname!=="/login") || (token !== "" && router.pathname==="/login")) && !loading) {
 		return <Component {...pageProps} />
 	}
 	else {
@@ -24,6 +24,7 @@ const  LoginModdlware = ({Component,pageProps,token}) => {
 	}
 }
 const mapStateToProps = state => ({
-	token: state.authRedicer.token
+	loading: state.authRedicer.token.loading,
+	token: state.authRedicer.token.token
 })
 export default connect(mapStateToProps)(LoginModdlware)

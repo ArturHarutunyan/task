@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import {setPosts} from "../store/posts/actions";
 import {logout} from "../store/auth/actions";
 
-
 import {title, list, listElementStyle, logOutButton} from "../components/style";
 
 function PostList({posts,setPosts,logout}) {
@@ -23,7 +22,7 @@ function PostList({posts,setPosts,logout}) {
     }, []);
 
     const handleLogeOut =() => {
-       logout()
+       logout();
     }
     return (
         <>

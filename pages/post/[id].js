@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import { useRouter } from 'next/router'
 import Router from 'next/router'
-import {setComments, setPosts} from "../../store/posts/actions";
+import {setComments} from "../../store/posts/actions";
 import {connect} from "react-redux";
-import {list, postStyle, title, listElementStyle, backButton, logOutButton} from "../../components/style"
+import {postStyle, title, listElementStyle, backButton, logOutButton} from "../../components/style"
 import {logout} from "../../store/auth/actions";
 
 
@@ -43,6 +43,7 @@ const Post =  ({posts,setComments,logout}) => {
 
 	const handleLogOut = () => {
 		logout()
+
 	}
 
 	return (
