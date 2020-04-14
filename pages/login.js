@@ -33,7 +33,7 @@ const Login = ({login}) => {
 	return (
 		<div style={loginForm}>
 			<input placeholder="login" value={userName} onChange={handleUserNameChange}/>
-			<input placeholder="password" value={password} onChange={handlePasswordChange}/>
+			<input placeholder="password" type="password" value={password} onChange={handlePasswordChange}/>
 			<button onClick={handleLogIn}>Log in</button>
 		</div>
 	);
